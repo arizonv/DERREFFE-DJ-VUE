@@ -1,14 +1,13 @@
 from django.urls import path
-from .views import LoginAPIView,UserLogout,UserList,Register,UserReport
+# from .views import LoginAPIView,UserLogout,UserList,Register,UserReport
+from .views import user_list
 
 app_name = 'api'
 
 urlpatterns = [
     # AUTH  ######################################################
-    # path('auth/', LoginAPIView.as_view(), name='login'),
-    # path('out/', UserLogout.as_view(), name='logout'),
     # USERS ######################################################
+    path('', user_list, name='user_list'),
     # SERVICES ###################################################
     # RESPORT ####################################################
 ]
-

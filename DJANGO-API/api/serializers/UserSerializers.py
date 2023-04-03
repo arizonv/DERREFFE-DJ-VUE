@@ -1,11 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
-from accounts.models import User
+from api.models import User
+from rest_framework.validators import UniqueValidator
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email', 'is_staff']
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
@@ -17,9 +14,6 @@ class listSerializer (serializers.ModelSerializer):
          model = User
          fields = ("id","email","username","is_staff","is_active","date_joined")
 
-
-
-from rest_framework.validators import UniqueValidator
 
 
 class createUserSerializer (serializers.ModelSerializer):

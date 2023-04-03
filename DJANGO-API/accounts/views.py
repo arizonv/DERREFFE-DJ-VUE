@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from .decorators import admin_required, worker_required, client_required
+from  api.decorators import admin_required, worker_required, client_required
 
 @login_required
 @admin_required
